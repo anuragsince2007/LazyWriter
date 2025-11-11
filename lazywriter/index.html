@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>LazyWriter</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="./styles.css" />
+	</head>
+	<body>
+		<header class="lw-header">
+			<div class="lw-header-inner">
+				<div class="lw-brand">LazyWriter</div>
+				<div class="lw-tagline">Your smart study partner</div>
+			</div>
+		</header>
+
+		<main class="lw-main">
+			<section class="lw-hero">
+				<h1>Choose Your Perfect Assignment Solution</h1>
+				<p class="lw-hero-sub">Upload your files and let us handle the rest</p>
+			</section>
+
+			<section class="lw-options">
+				<div class="lw-card lw-card--left">
+					<div class="lw-card-head">
+						<div class="lw-icon is-doc" aria-hidden="true">
+							<svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M7 3h6l4 4v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.5"/><path d="M13 3v4h4" stroke="currentColor" stroke-width="1.5"/></svg>
+						</div>
+						<h2>Direct Assignment</h2>
+					</div>
+					<p class="lw-card-sub">Upload your question and answer files for direct printing</p>
+					<ul class="lw-checklist">
+						<li>Upload question with answer file</li>
+						<li>Direct print/write service</li>
+						<li>Fast turnaround</li>
+						<li>Exact copy of your content</li>
+					</ul>
+					<div class="lw-actions">
+						<button id="cta-direct" class="lw-button lw-button--xl">Upload Files</button>
+					</div>
+					<form id="direct-form" class="lw-form lw-hidden" enctype="multipart/form-data">
+						<input id="direct-file" class="lw-input" type="file" accept=".pdf,.doc,.docx,.txt,.png,.jpg,.jpeg" />
+					</form>
+				</div>
+
+				<div class="lw-card lw-card--right">
+					<div class="lw-popular">Popular Choice</div>
+					<div class="lw-card-head">
+						<div class="lw-icon is-upload" aria-hidden="true">
+							<svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 3v12" stroke="currentColor" stroke-width="1.5"/><path d="M8.5 6.5 12 3l3.5 3.5" stroke="currentColor" stroke-width="1.5"/><rect x="4" y="15" width="16" height="6" rx="2" stroke="currentColor" stroke-width="1.5"/></svg>
+						</div>
+						<h2>AI-Powered Answers</h2>
+					</div>
+					<p class="lw-card-sub">Upload only questions and let our AI generate answers</p>
+					<ul class="lw-checklist">
+						<li>Upload questions only</li>
+						<li>Choose Global or Custom answers</li>
+						<li>AI-powered content generation</li>
+						<li>Handwritten delivery</li>
+					</ul>
+					<div class="lw-actions">
+						<button id="cta-ai" class="lw-button lw-button--xl">Upload Questions</button>
+					</div>
+					<form id="ai-form" class="lw-form lw-hidden" enctype="multipart/form-data">
+						<input id="ai-questions" class="lw-input" type="file" accept=".pdf,.doc,.docx,.txt,.png,.jpg,.jpeg" />
+						<div class="lw-choice">
+							<label class="lw-radio">
+								<input type="radio" name="ai-mode" value="global" checked />
+								Global answers
+							</label>
+							<label class="lw-radio">
+								<input type="radio" name="ai-mode" value="book" />
+								Answer only from my book
+							</label>
+						</div>
+						<div id="book-upload" class="lw-hidden">
+							<input id="ai-book" class="lw-input" type="file" accept=".pdf,.doc,.docx,.txt,.png,.jpg,.jpeg" />
+						</div>
+					</form>
+				</div>
+			</section>
+
+			<section class="lw-tracker">
+				<h3>Track your progress anytime</h3>
+				<ol class="lw-steps" id="lw-steps">
+					<li class="lw-step is-active" data-step="posted">Order Posted</li>
+					<li class="lw-step" data-step="in-process">In Process</li>
+					<li class="lw-step" data-step="writing-done">Writing Done</li>
+					<li class="lw-step" data-step="out-for-delivery">Out for Delivery</li>
+					<li class="lw-step" data-step="delivered">Delivered & Confirmed</li>
+				</ol>
+				<div class="lw-step-controls">
+					<button id="prev-step" class="lw-button is-secondary">Prev</button>
+					<button id="next-step" class="lw-button">Next</button>
+				</div>
+			</section>
+
+			<section id="lw-result" class="lw-result lw-hidden"></section>
+		</main>
+
+		<footer class="lw-footer">
+			<div>Because at LazyWriter, your words deserve a little lazy magic.</div>
+		</footer>
+
+		<script src="./app.js"></script>
+	</body>
+	</html>
+
+
